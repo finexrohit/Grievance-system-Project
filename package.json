@@ -1,14 +1,24 @@
 {
-  "name": "honda-grievance-system",
+  "name": "test-grievance-system",
   "version": "1.0.0",
-  "description": "Enterprise Grievance Management System for Honda Company across 5 locations with 10 Associate Admins",
+  "type": "module",
+  "description": "Enterprise Grievance Management System across 5 locations with 10 Associate Admins",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm run dev",
     "client": "cd client && npm run dev",
     "start": "cd server && npm start",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
+    "vercel-build": "cd client && npm install && npm run build",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.24.4"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

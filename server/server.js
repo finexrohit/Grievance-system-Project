@@ -6,6 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import {
   initDB,
+  ensureDB,
   resetDB,
   findUserByCredentials,
   findUserByIdentifier,
@@ -31,10 +32,11 @@ import {
   deleteOTP
 } from './db.js';
 
-dotenv.config();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -48,8 +50,23 @@ app.use(morgan('dev'));
 const clientDist = path.join(__dirname, '../client/dist');
 app.use(express.static(clientDist));
 
-// Initialize MySQL database on server start
-initDB();
+// Ensure DB is connected & initialized before processing API routes
+app.use(async (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    try {
+      await ensureDB();
+    } catch (err) {
+      console.error('Database connection error:', err);
+      return res.status(500).json({ 
+        error: 'Database connection failed. Please verify your Aiven MySQL credentials.' 
+      });
+    }
+  }
+  next();
+});
+
+// Non-blocking trigger on server start
+ensureDB().catch(e => console.log('Background DB init notice:', e.message));
 
 // Helper to extract user from header
 async function getRequestUser(req) {
@@ -573,11 +590,15 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(clientDist, 'index.html'));
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(` Honda Grievance Management System Backend (MySQL)`);
-  console.log(` Running on: http://localhost:${PORT}`);
-  console.log(` Location Routing Active: H.O | 1F | 2F | 3F | 4F`);
-  console.log(`====================================================`);
-});
+// Start Server only in standalone mode (not when run inside Vercel serverless)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(` Test Grievance Management System Backend (MySQL)`);
+    console.log(` Running on: http://localhost:${PORT}`);
+    console.log(` Location Routing Active: H.O | 1F | 2F | 3F | 4F`);
+    console.log(`====================================================`);
+  });
+}
+
+export default app;

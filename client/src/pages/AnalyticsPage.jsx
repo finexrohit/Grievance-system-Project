@@ -44,7 +44,7 @@ export default function AnalyticsPage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `Honda_Grievances_${user.location}_${Date.now()}.csv`);
+    link.setAttribute('download', `Test_Grievances_${user.location}_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -30,7 +30,7 @@ export default function QuickLoginDrawer({ isOpen, onClose, onSelectCredentials 
 
   const handleSelect = (selectedUser) => {
     if (onSelectCredentials) {
-      onSelectCredentials(selectedUser.empId, 'honda@password123');
+      onSelectCredentials(selectedUser.empId, selectedUser.plainPassword || selectedUser.password || 'test@password123');
     } else {
       quickSwitchUser(selectedUser);
     }
@@ -39,8 +39,8 @@ export default function QuickLoginDrawer({ isOpen, onClose, onSelectCredentials 
 
   const handleDownloadCredentials = () => {
     const link = document.createElement('a');
-    link.href = '/honda_login_credentials.txt';
-    link.download = 'honda_login_credentials.txt';
+    link.href = '/test_login_credentials.txt';
+    link.download = 'test_login_credentials.txt';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -60,7 +60,7 @@ export default function QuickLoginDrawer({ isOpen, onClose, onSelectCredentials 
                 Demo Accounts & Quick Login
               </h3>
               <p className="text-xs text-slate-500">
-                10 Associate Admins across 5 locations & 30+ Honda Employees
+                10 Associate Admins across 5 locations & 30+ Test Employees
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function QuickLoginDrawer({ isOpen, onClose, onSelectCredentials 
         {/* Global credentials notice & Download Button */}
         <div className="px-5 py-2.5 bg-red-50 border-b border-red-100 flex flex-wrap items-center justify-between gap-2 text-xs text-red-700">
           <span>
-            Default password: <strong className="font-mono text-red-800 bg-white border border-red-200 px-2 py-0.5 rounded shadow-xs">honda@password123</strong>
+            Default password: <strong className="font-mono text-red-800 bg-white border border-red-200 px-2 py-0.5 rounded shadow-xs">test@password123</strong>
           </span>
           <button
             onClick={handleDownloadCredentials}
@@ -110,7 +110,7 @@ export default function QuickLoginDrawer({ isOpen, onClose, onSelectCredentials 
               }`}
             >
               <Users className="w-3.5 h-3.5" />
-              Honda Employees ({employees.length})
+              Test Employees ({employees.length})
             </button>
           </div>
 

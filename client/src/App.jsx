@@ -75,7 +75,7 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© 2026 Honda Motor Co., Ltd. — Employee Grievance Redressal & Resolution System</p>
+          <p>© 2026 Test — Employee Grievance Redressal & Resolution System</p>
           <div className="flex items-center gap-4 text-[11px] text-slate-500">
             <span>5 Factory Locations: H.O | 1F | 2F | 3F | 4F</span>
             <span>•</span>

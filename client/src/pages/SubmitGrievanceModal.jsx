@@ -119,7 +119,7 @@ export default function SubmitGrievanceModal({ isOpen, onClose }) {
               <PlusCircle className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">Lodge Official Honda Grievance</h3>
+              <h3 className="text-base font-bold text-slate-900">Lodge Official Test Grievance</h3>
               <p className="text-xs text-slate-500">
                 Directly routed to the designated Location Associate Admin
               </p>

@@ -116,12 +116,12 @@ export default function Navbar({ activeTab, setActiveTab, onOpenSubmitModal }) {
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 rounded-xl bg-red-600 flex items-center justify-center font-bold text-white shadow-md shadow-red-600/30">
-                  <span className="font-serif text-xl tracking-tighter">H</span>
+                  <span className="font-serif text-xl tracking-tighter">T</span>
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="font-extrabold tracking-wider text-base text-slate-900">
-                      HONDA
+                      TEST
                     </span>
                     <span className="text-[10px] uppercase font-bold tracking-widest bg-red-50 text-red-600 border border-red-200 px-1.5 py-0.2 rounded">
                       Grievance Portal

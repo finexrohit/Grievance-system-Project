@@ -66,7 +66,7 @@ export default function DirectoryPage() {
     empId: '',
     name: '',
     email: '',
-    password: 'honda@password123',
+    password: 'test@password123',
     role: 'admin',
     location: '1F',
     department: 'Plant Operations & Grievance Cell',
@@ -149,7 +149,7 @@ export default function DirectoryPage() {
         empId: '',
         name: '',
         email: '',
-        password: 'honda@password123',
+        password: 'test@password123',
         role: 'employee',
         location: '1F',
         department: 'General Operations',
@@ -172,7 +172,7 @@ export default function DirectoryPage() {
       empId: targetUser.empId || '',
       name: targetUser.name || '',
       email: targetUser.email || '',
-      password: targetUser.plainPassword || targetUser.password || 'honda@password123',
+      password: targetUser.plainPassword || targetUser.password || 'test@password123',
       role: targetUser.role || 'employee',
       location: targetUser.location || '1F',
       department: targetUser.department || '',
@@ -242,7 +242,7 @@ export default function DirectoryPage() {
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded flex items-center gap-1">
                 <Users className="w-3.5 h-3.5 text-red-600" />
-                HONDA ASSOCIATE &amp; ID ROSTER
+                TEST ASSOCIATE &amp; ID ROSTER
               </span>
               {isSuperAdmin && (
                 <span className="text-[10px] font-mono font-extrabold text-purple-800 bg-purple-50 border border-purple-200 px-2 py-0.5 rounded flex items-center gap-1">
@@ -447,7 +447,7 @@ export default function DirectoryPage() {
                 {filteredUsers.map((u) => {
                   const isDisabled = u.status === 'Disabled';
                   const isSuper = u.role === 'super_admin' || u.isSuperAdmin;
-                  const displayPass = u.plainPassword || u.password || 'honda@password123';
+                  const displayPass = u.plainPassword || u.password || 'test@password123';
 
                   return (
                     <tr key={u.id} className={`hover:bg-slate-50/80 transition-colors ${isDisabled ? 'bg-rose-50/30' : ''}`}>
@@ -581,7 +581,7 @@ export default function DirectoryPage() {
             {filteredUsers.map((u) => {
               const isDisabled = u.status === 'Disabled';
               const isSuper = u.role === 'super_admin' || u.isSuperAdmin;
-              const displayPass = u.plainPassword || u.password || 'honda@password123';
+              const displayPass = u.plainPassword || u.password || 'test@password123';
 
               return (
                 <div
@@ -769,7 +769,7 @@ export default function DirectoryPage() {
                       /* Regular Admin View */
                       <div className="pt-2 flex items-center justify-between border-t border-slate-100">
                         <span className="text-[10px] text-slate-400">
-                          Default: <strong className="font-mono text-slate-600">honda@password123</strong>
+                          Default: <strong className="font-mono text-slate-600">test@password123</strong>
                         </span>
                         <button
                           type="button"
@@ -857,7 +857,7 @@ export default function DirectoryPage() {
                   <input
                     type="email"
                     required
-                    placeholder="e.g. rohit.kumar@honda.co.in"
+                    placeholder="e.g. rohit.kumar@test.co.in"
                     value={createForm.email}
                     onChange={(e) => setCreateForm({ ...createForm, email: e.target.value.trim().toLowerCase() })}
                     className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 focus:bg-white focus:border-red-600 outline-none"
@@ -869,7 +869,7 @@ export default function DirectoryPage() {
                     <input
                       type={showCreatePassword ? 'text' : 'password'}
                       required
-                      placeholder="e.g. honda@password123"
+                      placeholder="e.g. test@password123"
                       value={createForm.password}
                       onChange={(e) => setCreateForm({ ...createForm, password: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-300 rounded-lg pl-3 pr-10 py-2 font-mono focus:bg-white focus:border-red-600 outline-none"

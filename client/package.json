@@ -1,5 +1,5 @@
 {
-  "name": "honda-grievance-client",
+  "name": "test-grievance-client",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   "dependencies": {
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
-    "honda-grievance-system": "file:..",
+    "test-grievance-system": "file:..",
     "lucide-react": "^0.378.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

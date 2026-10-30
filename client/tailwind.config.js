@@ -7,13 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        honda: {
+        test: {
           red: '#CC0000',
           darkred: '#990000',
           lightred: '#FF4D4D',
           silver: '#E5E7EB',
           dark: '#111827',
-          card: '#1F2937',
+          card: '#1F2937'
         }
       },
       fontFamily: {

@@ -4,17 +4,17 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('honda_grievance_user');
+    const saved = localStorage.getItem('test_grievance_user') || localStorage.getItem('test_grievance_user');
     return saved ? JSON.parse(saved) : null;
   });
   // Stores the original admin object when an admin switches to user mode
   const [originalAdmin, setOriginalAdmin] = useState(() => {
-    const saved = localStorage.getItem('honda_grievance_original_admin');
+    const saved = localStorage.getItem('test_grievance_original_admin') || localStorage.getItem('test_grievance_original_admin');
     return saved ? JSON.parse(saved) : null;
   });
   // Stores original Super Admin object when Super Admin switches to admin or user mode
   const [originalSuperAdmin, setOriginalSuperAdmin] = useState(() => {
-    const saved = localStorage.getItem('honda_grievance_original_super_admin');
+    const saved = localStorage.getItem('test_grievance_original_super_admin') || localStorage.getItem('test_grievance_original_super_admin');
     return saved ? JSON.parse(saved) : null;
   });
   const [directoryUsers, setDirectoryUsers] = useState([]);
@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
   const fetchDirectory = async () => {
     try {
       const headers = {};
-      const activeUser = user || (localStorage.getItem('honda_grievance_user') ? JSON.parse(localStorage.getItem('honda_grievance_user')) : null);
+      const activeUser = user || (localStorage.getItem('test_grievance_user') ? JSON.parse(localStorage.getItem('test_grievance_user')) : (localStorage.getItem('test_grievance_user') ? JSON.parse(localStorage.getItem('test_grievance_user')) : null));
       if (activeUser?.id) {
         headers['x-user-id'] = activeUser.id;
       }
@@ -68,7 +68,7 @@ export function AuthProvider({ children }) {
         throw new Error(data.error || 'Login failed.');
       }
       setUser(data.user);
-      localStorage.setItem('honda_grievance_user', JSON.stringify(data.user));
+      localStorage.setItem('test_grievance_user', JSON.stringify(data.user));
       setLoading(false);
       return { success: true, user: data.user };
     } catch (err) {
@@ -82,10 +82,10 @@ export function AuthProvider({ children }) {
   const quickSwitchUser = (selectedUser) => {
     setOriginalAdmin(null);
     setOriginalSuperAdmin(null);
-    localStorage.removeItem('honda_grievance_original_admin');
-    localStorage.removeItem('honda_grievance_original_super_admin');
+    localStorage.removeItem('test_grievance_original_admin');
+    localStorage.removeItem('test_grievance_original_super_admin');
     setUser(selectedUser);
-    localStorage.setItem('honda_grievance_user', JSON.stringify(selectedUser));
+    localStorage.setItem('test_grievance_user', JSON.stringify(selectedUser));
   };
 
   // --- Tri-Mode Switcher: Super Admin, Normal Admin, Normal User ---
@@ -104,8 +104,8 @@ export function AuthProvider({ children }) {
     };
     setUser(superProfile);
     setOriginalSuperAdmin(null);
-    localStorage.removeItem('honda_grievance_original_super_admin');
-    localStorage.setItem('honda_grievance_user', JSON.stringify(superProfile));
+    localStorage.removeItem('test_grievance_original_super_admin');
+    localStorage.setItem('test_grievance_user', JSON.stringify(superProfile));
   };
 
   // Switch to Normal Admin Mode (Associate Admin view)
@@ -113,7 +113,7 @@ export function AuthProvider({ children }) {
     if (isSuperAdminUser) {
       if (!originalSuperAdmin && user) {
         setOriginalSuperAdmin(user);
-        localStorage.setItem('honda_grievance_original_super_admin', JSON.stringify(user));
+        localStorage.setItem('test_grievance_original_super_admin', JSON.stringify(user));
       }
       const base = originalSuperAdmin || user;
       const adminProfile = {
@@ -125,7 +125,7 @@ export function AuthProvider({ children }) {
         department: 'Corporate Human Resources & Operations'
       };
       setUser(adminProfile);
-      localStorage.setItem('honda_grievance_user', JSON.stringify(adminProfile));
+      localStorage.setItem('test_grievance_user', JSON.stringify(adminProfile));
     } else if (originalAdmin) {
       switchBackToAdmin();
     }
@@ -136,7 +136,7 @@ export function AuthProvider({ children }) {
     if (isSuperAdminUser) {
       if (!originalSuperAdmin && user) {
         setOriginalSuperAdmin(user);
-        localStorage.setItem('honda_grievance_original_super_admin', JSON.stringify(user));
+        localStorage.setItem('test_grievance_original_super_admin', JSON.stringify(user));
       }
       const base = originalSuperAdmin || user;
       const userProfile = {
@@ -148,10 +148,10 @@ export function AuthProvider({ children }) {
         department: 'General Operations & Associate Welfare'
       };
       setUser(userProfile);
-      localStorage.setItem('honda_grievance_user', JSON.stringify(userProfile));
+      localStorage.setItem('test_grievance_user', JSON.stringify(userProfile));
     } else if (user && user.role === 'admin') {
       setOriginalAdmin(user);
-      localStorage.setItem('honda_grievance_original_admin', JSON.stringify(user));
+      localStorage.setItem('test_grievance_original_admin', JSON.stringify(user));
       const userModeProfile = {
         ...user,
         role: 'employee',
@@ -160,7 +160,7 @@ export function AuthProvider({ children }) {
         designation: 'Plant Operations Associate'
       };
       setUser(userModeProfile);
-      localStorage.setItem('honda_grievance_user', JSON.stringify(userModeProfile));
+      localStorage.setItem('test_grievance_user', JSON.stringify(userModeProfile));
     }
   };
 
@@ -172,9 +172,9 @@ export function AuthProvider({ children }) {
     }
     if (!originalAdmin) return;
     setUser(originalAdmin);
-    localStorage.setItem('honda_grievance_user', JSON.stringify(originalAdmin));
+    localStorage.setItem('test_grievance_user', JSON.stringify(originalAdmin));
     setOriginalAdmin(null);
-    localStorage.removeItem('honda_grievance_original_admin');
+    localStorage.removeItem('test_grievance_original_admin');
   };
 
   // Direct return to Super Admin console
@@ -186,9 +186,9 @@ export function AuthProvider({ children }) {
     setUser(null);
     setOriginalAdmin(null);
     setOriginalSuperAdmin(null);
-    localStorage.removeItem('honda_grievance_user');
-    localStorage.removeItem('honda_grievance_original_admin');
-    localStorage.removeItem('honda_grievance_original_super_admin');
+    localStorage.removeItem('test_grievance_user');
+    localStorage.removeItem('test_grievance_original_admin');
+    localStorage.removeItem('test_grievance_original_super_admin');
   };
 
   // --- Super Admin Account Management Functions ---

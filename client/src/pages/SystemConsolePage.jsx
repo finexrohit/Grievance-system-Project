@@ -78,7 +78,7 @@ export default function SystemConsolePage() {
     empId: '',
     name: '',
     email: '',
-    password: 'honda@password123',
+    password: 'test@password123',
     role: 'admin',
     location: '1F',
     department: 'Plant Operations & Grievance Cell',
@@ -159,7 +159,7 @@ export default function SystemConsolePage() {
         empId: '',
         name: '',
         email: '',
-        password: 'honda@password123',
+        password: 'test@password123',
         role: 'admin',
         location: '1F',
         department: 'Plant Operations & Grievance Cell',
@@ -183,7 +183,7 @@ export default function SystemConsolePage() {
       empId: targetUser.empId || '',
       name: targetUser.name || '',
       email: targetUser.email || '',
-      password: targetUser.plainPassword || targetUser.password || 'honda@password123',
+      password: targetUser.plainPassword || targetUser.password || 'test@password123',
       role: targetUser.role || 'admin',
       location: targetUser.location || '1F',
       department: targetUser.department || '',
@@ -280,7 +280,7 @@ export default function SystemConsolePage() {
                 <Crown className="w-3 h-3" /> Root Authority
               </span>
               <span className="text-xs text-purple-200 font-mono">
-                MYSQL: honda_grievance_db
+                MYSQL: test_grievance_db
               </span>
             </div>
             <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2">
@@ -596,7 +596,7 @@ export default function SystemConsolePage() {
                   filteredUsers.map((u) => {
                     const isDisabled = u.status === 'Disabled';
                     const isSuper = u.role === 'super_admin' || u.isSuperAdmin;
-                    const displayPass = u.plainPassword || u.password || 'honda@password123';
+                    const displayPass = u.plainPassword || u.password || 'test@password123';
 
                     return (
                       <tr key={u.id} className={`hover:bg-slate-50/80 transition-colors ${isDisabled ? 'bg-rose-50/30' : ''}`}>
@@ -740,7 +740,7 @@ export default function SystemConsolePage() {
             {filteredUsers.map((u) => {
               const isDisabled = u.status === 'Disabled';
               const isSuper = u.role === 'super_admin' || u.isSuperAdmin;
-              const displayPass = u.plainPassword || u.password || 'honda@password123';
+              const displayPass = u.plainPassword || u.password || 'test@password123';
 
               return (
                 <div
@@ -1062,7 +1062,7 @@ export default function SystemConsolePage() {
                   <input
                     type="email"
                     required
-                    placeholder="e.g. ankit.sharma@honda.co.in"
+                    placeholder="e.g. ankit.sharma@test.co.in"
                     value={createForm.email}
                     onChange={(e) => setCreateForm({ ...createForm, email: e.target.value.trim().toLowerCase() })}
                     className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 focus:bg-white focus:border-red-600 outline-none"
@@ -1074,7 +1074,7 @@ export default function SystemConsolePage() {
                     <input
                       type={showCreatePassword ? 'text' : 'password'}
                       required
-                      placeholder="e.g. honda@password123"
+                      placeholder="e.g. test@password123"
                       value={createForm.password}
                       onChange={(e) => setCreateForm({ ...createForm, password: e.target.value })}
                       className="w-full bg-slate-50 border border-slate-300 rounded-lg pl-3 pr-10 py-2 font-mono focus:bg-white focus:border-red-600 outline-none"

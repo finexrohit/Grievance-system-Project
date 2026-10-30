@@ -1,6 +1,6 @@
--- Honda Grievance Management System Database Schema
-CREATE DATABASE IF NOT EXISTS honda_grievance_db;
-USE honda_grievance_db;
+-- Test Grievance Management System Database Schema
+CREATE DATABASE IF NOT EXISTS test_grievance_db;
+USE test_grievance_db;
 
 -- 1. Complete Users & Employee Credentials Table
 -- Stores all employee/admin IDs, passwords, departments, locations, contact info, and profile details

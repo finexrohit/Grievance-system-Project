@@ -33,7 +33,7 @@ class NumberedCanvas(canvas.Canvas):
         if self._pageNumber > 1:
             self.setFont("Helvetica-Bold", 8)
             self.setFillColor(colors.HexColor("#CC0000"))
-            self.drawString(40, 760, "HONDA MOTORCYCLES & SCOOTERS INDIA (HMSI)")
+            self.drawString(40, 760, "TEST CORP INDIA")
             self.setFont("Helvetica", 8)
             self.setFillColor(colors.HexColor("#64748B"))
             self.drawRightString(572, 760, "Internal Grievance Redressal System — Technical Documentation")
@@ -67,7 +67,7 @@ def build_pdf(filename):
     styles = getSampleStyleSheet()
     
     # Custom Palette
-    HONDA_RED = colors.HexColor("#CC0000")
+    TEST_RED = colors.HexColor("#CC0000")
     SLATE_DARK = colors.HexColor("#0F172A")
     SLATE_TEXT = colors.HexColor("#334155")
     SLATE_LIGHT = colors.HexColor("#F8FAFC")
@@ -100,7 +100,7 @@ def build_pdf(filename):
         fontName='Helvetica-Bold',
         fontSize=14,
         leading=18,
-        textColor=HONDA_RED,
+        textColor=TEST_RED,
         spaceBefore=14,
         spaceAfter=6
     )
@@ -175,13 +175,13 @@ def build_pdf(filename):
     # -------------------------------------------------------------
     banner_data = [
         [
-            Paragraph("<b>HONDA REDRESSAL SYSTEM</b><br/><font size='8' color='#94A3B8'>ENTERPRISE ASSOCIATE & ADMIN MANAGEMENT</font>", ParagraphStyle('HdrLeft', parent=styles['Normal'], textColor=colors.white, fontName='Helvetica-Bold', fontSize=12, leading=14)),
-            Paragraph("<b>OFFICIAL TECHNICAL DOCUMENTATION</b><br/><font size='8' color='#CBD5E1'>Honda Internship Project</font>", ParagraphStyle('HdrRight', parent=styles['Normal'], textColor=colors.white, fontName='Helvetica', fontSize=9, leading=12, alignment=2))
+            Paragraph("<b>TEST REDRESSAL SYSTEM</b><br/><font size='8' color='#94A3B8'>ENTERPRISE ASSOCIATE & ADMIN MANAGEMENT</font>", ParagraphStyle('HdrLeft', parent=styles['Normal'], textColor=colors.white, fontName='Helvetica-Bold', fontSize=12, leading=14)),
+            Paragraph("<b>OFFICIAL TECHNICAL DOCUMENTATION</b><br/><font size='8' color='#CBD5E1'>Test Internship Project</font>", ParagraphStyle('HdrRight', parent=styles['Normal'], textColor=colors.white, fontName='Helvetica', fontSize=9, leading=12, alignment=2))
         ]
     ]
     banner_table = Table(banner_data, colWidths=[332, 200])
     banner_table.setStyle(TableStyle([
-        ('BACKGROUND', (0,0), (-1,-1), HONDA_RED),
+        ('BACKGROUND', (0,0), (-1,-1), TEST_RED),
         ('PADDING', (0,0), (-1,-1), 10),
         ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ('BOTTOMPADDING', (0,0), (-1,-1), 10),
@@ -198,8 +198,8 @@ def build_pdf(filename):
 
     # Executive Overview Callout
     overview_text = (
-        "<b>Executive Summary:</b> The Honda Grievance Redressal System is a full-stack, enterprise-grade web application "
-        "engineered for Honda manufacturing plants (H.O, 1F Manesar, 2F Tapukara, 3F Narsapura, 4F Vithalapur). "
+        "<b>Executive Summary:</b> The Test Grievance Redressal System is a full-stack, enterprise-grade web application "
+        "engineered for Test manufacturing plants (H.O, 1F Manesar, 2F Tapukara, 3F Narsapura, 4F Vithalapur). "
         "It provides plant-level routing, tamper-proof location binding, multi-stage investigation workflows, automated SLA tracking, "
         "Head Office escalations, and interactive analytical reporting."
     )
@@ -212,7 +212,7 @@ def build_pdf(filename):
         ('TOPPADDING', (0,0), (-1,-1), 8),
         ('BOTTOMPADDING', (0,0), (-1,-1), 8),
         ('BOX', (0,0), (-1,-1), 1, colors.HexColor("#CBD5E1")),
-        ('LINELEFT', (0,0), (-1,-1), 4, HONDA_RED),
+        ('LINELEFT', (0,0), (-1,-1), 4, TEST_RED),
     ]))
     story.append(callout_table)
     story.append(Spacer(1, 14))
@@ -259,7 +259,7 @@ def build_pdf(filename):
          "When an associate lodges a grievance, the system automatically detects their registered plant location (H.O, 1F, 2F, 3F, 4F) and locks it. Manual plant tampering is prevented on both frontend and backend. The associate specifies category, area, priority, description, attachment, and optional anonymity."),
         
         ("Step 3: Sequential Ticket ID & Plant Routing", 
-         "Upon submission, the backend automatically generates a sequential ticket code (e.g. HONDA-1F-2026-008), auto-assigns the ticket to the designated Plant Associate Admin, and creates the first timeline audit log."),
+         "Upon submission, the backend automatically generates a sequential ticket code (e.g. TEST-1F-2026-008), auto-assigns the ticket to the designated Plant Associate Admin, and creates the first timeline audit log."),
         
         ("Step 4: Admin Investigation & Status Progression", 
          "The assigned Plant Admin opens the ticket in the Admin Dashboard to review evidence, write investigation notes, post public or internal comments, and update status through: Submitted -> Under Review -> In Progress -> Resolved -> Closed."),
@@ -284,7 +284,7 @@ def build_pdf(filename):
             ('RIGHTPADDING', (0,0), (-1,-1), 8),
             ('TOPPADDING', (0,0), (-1,-1), 4),
             ('BOTTOMPADDING', (0,0), (-1,-1), 4),
-            ('LINELEFT', (0,0), (-1,-1), 3, HONDA_RED),
+            ('LINELEFT', (0,0), (-1,-1), 3, TEST_RED),
         ]))
         story.append(step_box)
         story.append(Spacer(1, 4))
@@ -296,7 +296,7 @@ def build_pdf(filename):
     # -------------------------------------------------------------
     story.append(Paragraph("3. Database Schema & Storage Architecture", h1_style))
     story.append(Paragraph(
-        "All data is persistently stored in a relational <b>MySQL Database</b> named <code>honda_grievance_db</code> running on port 3306. "
+        "All data is persistently stored in a relational <b>MySQL Database</b> named <code>test_grievance_db</code> running on port 3306. "
         "The server utilizes pooled connections for high concurrency and zero memory leaks.",
         body_style
     ))
@@ -407,5 +407,9 @@ def build_pdf(filename):
     print(f"Successfully generated PDF: {filename}")
 
 if __name__ == "__main__":
-    out_file = r"c:\Users\rohit\Desktop\Projects\Honda Internship\Greivance System\Honda_Grievance_Redressal_System_Documentation.pdf"
+    import shutil
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    out_file = os.path.join(base_dir, "Test_Grievance_Redressal_System_Documentation.pdf")
     build_pdf(out_file)
+    shutil.copy2(out_file, os.path.join(base_dir, "client", "public", "Test_Grievance_Redressal_System_Documentation.pdf"))
+    print("PDF generation and copying complete.")

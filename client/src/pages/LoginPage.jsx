@@ -34,13 +34,13 @@ export default function LoginPage({ onNavigateForgot }) {
       <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-red-100/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10">
-        {/* Honda Brand Emblem */}
+        {/* Test Brand Emblem */}
         <div className="flex flex-col items-center justify-center text-center">
           <div className="w-16 h-16 rounded-2xl bg-red-600 flex items-center justify-center text-white shadow-lg shadow-red-600/30 mb-3 border border-red-500/20">
-            <span className="font-serif text-4xl font-bold tracking-tighter">H</span>
+            <span className="font-serif text-4xl font-bold tracking-tighter">T</span>
           </div>
           <h1 className="text-2xl font-black tracking-wider text-slate-900">
-            HONDA MOTOR COMPANY
+            TEST
           </h1>
           <p className="text-xs uppercase tracking-widest text-red-600 font-bold mt-1">
             Associate Grievance Redressal & Resolution System
@@ -75,7 +75,7 @@ export default function LoginPage({ onNavigateForgot }) {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. HND-ADM-HO1 or email@honda.co.in"
+                  placeholder="e.g. HND-ADM-HO1 or email@test.co.in"
                   value={identifier}
                   onChange={(e) => setIdentifier(e.target.value)}
                   className="w-full pl-10 pr-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-colors shadow-xs"
@@ -129,7 +129,7 @@ export default function LoginPage({ onNavigateForgot }) {
 
         {/* Footer info */}
         <p className="mt-4 text-center text-xs text-slate-500">
-          Honda Motor Co. Corporate & Plant Grievance Redressal Architecture • Internal Use Only
+          Test Corporate & Plant Grievance Redressal Architecture • Internal Use Only
         </p>
       </div>
     </div>

@@ -88,7 +88,7 @@ export default function ForgotPasswordPage({ onNavigateLogin }) {
           </div>
           <h2 className="text-2xl font-black text-slate-900">Password Recovery</h2>
           <p className="text-xs text-slate-500 mt-1">
-            Honda Grievance Redressal Secure Authentication Portal
+            Test Grievance Redressal Secure Authentication Portal
           </p>
         </div>
 
@@ -139,14 +139,14 @@ export default function ForgotPasswordPage({ onNavigateLogin }) {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. HND-1F-201 or rohan.kulkarni@honda.co.in"
+                    placeholder="e.g. HND-1F-201 or rohan.kulkarni@test.co.in"
                     value={identifier}
                     onChange={(e) => setIdentifier(e.target.value)}
                     className="w-full pl-10 pr-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-colors shadow-xs"
                   />
                 </div>
                 <p className="text-[11px] text-slate-500 mt-1.5">
-                  A 6-digit security code will be generated for your verified Honda profile.
+                  A 6-digit security code will be generated for your verified Test profile.
                 </p>
               </div>
 
@@ -274,7 +274,7 @@ export default function ForgotPasswordPage({ onNavigateLogin }) {
               <div>
                 <h3 className="text-base font-bold text-slate-900">Password Updated Successfully!</h3>
                 <p className="text-xs text-slate-600 mt-1">
-                  Your Honda Associate credentials have been safely renewed. You can now sign in with your new password.
+                  Your Test Associate credentials have been safely renewed. You can now sign in with your new password.
                 </p>
               </div>
               <button

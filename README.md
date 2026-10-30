@@ -1,12 +1,12 @@
-# 🚗 Honda Grievance Redressal & Resolution System
+# 🚗 Test Grievance Redressal & Resolution System
 
-An enterprise-grade, location-aware Grievance Management System built for **Honda Motor Company**. The system supports **5 facility locations** (`H.O`, `1F`, `2F`, `3F`, `4F`), **10 Associate Admins**, pre-generated employees with realistic designations, a complete grievance lifecycle, an executive analytics dashboard, and authentication with password recovery.
+An enterprise-grade, location-aware Grievance Management System built for **Test Company**. The system supports **5 facility locations** (`H.O`, `1F`, `2F`, `3F`, `4F`), **10 Associate Admins**, pre-generated employees with realistic designations, a complete grievance lifecycle, an executive analytics dashboard, and authentication with password recovery.
 
 ---
 
 ## 🌟 Key Features
 
-1. **Honda Corporate Authentication**:
+1. **Test Corporate Authentication**:
    - Clean, branded login portal with dark automotive aesthetic.
    - **Forgot Password Workflow**: 3-step recovery flow (Employee ID/Email verification $\rightarrow$ 6-digit OTP verification $\rightarrow$ New password reset).
    - **1-Click Demo Credentials Switcher**: Effortlessly switch between any of the 10 Admins or 30 Employees directly from the login page or top navigation bar.
@@ -42,22 +42,22 @@ An enterprise-grade, location-aware Grievance Management System built for **Hond
 ## 🔑 Login Credentials Reference
 
 > [!NOTE]
-> Default password for all pre-seeded accounts: **`honda@password123`**
+> Default password for all pre-seeded accounts: **`test@password123`**
 
 ### 🛡️ 10 Associate Admins (5 Locations)
 
 | Location | Employee ID | Name | Official Email | Designation |
 |---|---|---|---|---|
-| **H.O** | `HND-ADM-HO1` | Rajeshwar Sharma | `rajeshwar.sharma@honda.co.in` | Head Office Principal Associate Admin |
-| **1F** | `HND-ADM-1F1` | Vikramaditya Patel | `vikram.patel@honda.co.in` | Plant 1 Associate Admin (Shift A) |
-| **1F** | `HND-ADM-1F2` | Sunita Verma | `sunita.verma@honda.co.in` | Plant 1 Associate Admin (Shift B) |
-| **1F** | `HND-ADM-1F3` | Amitabh Saxena | `amitabh.saxena@honda.co.in` | Plant 1 Associate Admin (General Shift) |
-| **2F** | `HND-ADM-2F1` | Meenakshi Iyer | `meenakshi.iyer@honda.co.in` | Plant 2 Associate Admin (Lead) |
-| **2F** | `HND-ADM-2F2` | Rahul Nair | `rahul.nair@honda.co.in` | Plant 2 Associate Admin (Shift A) |
-| **2F** | `HND-ADM-2F3` | Pooja Deshmukh | `pooja.deshmukh@honda.co.in` | Plant 2 Associate Admin (Shift B) |
-| **3F** | `HND-ADM-3F1` | Ananya Roy Chowdhury | `ananya.roy@honda.co.in` | Plant 3 Associate Admin (Senior) |
-| **3F** | `HND-ADM-3F2` | Sanjay K. Rao | `sanjay.rao@honda.co.in` | Plant 3 Associate Admin (Operations) |
-| **4F** | `HND-ADM-4F1` | Deepak Joshi | `deepak.joshi@honda.co.in` | Plant 4 Sole Associate Admin |
+| **H.O** | `HND-ADM-HO1` | Rajeshwar Sharma | `rajeshwar.sharma@test.co.in` | Head Office Principal Associate Admin |
+| **1F** | `HND-ADM-1F1` | Vikramaditya Patel | `vikram.patel@test.co.in` | Plant 1 Associate Admin (Shift A) |
+| **1F** | `HND-ADM-1F2` | Sunita Verma | `sunita.verma@test.co.in` | Plant 1 Associate Admin (Shift B) |
+| **1F** | `HND-ADM-1F3` | Amitabh Saxena | `amitabh.saxena@test.co.in` | Plant 1 Associate Admin (General Shift) |
+| **2F** | `HND-ADM-2F1` | Meenakshi Iyer | `meenakshi.iyer@test.co.in` | Plant 2 Associate Admin (Lead) |
+| **2F** | `HND-ADM-2F2` | Rahul Nair | `rahul.nair@test.co.in` | Plant 2 Associate Admin (Shift A) |
+| **2F** | `HND-ADM-2F3` | Pooja Deshmukh | `pooja.deshmukh@test.co.in` | Plant 2 Associate Admin (Shift B) |
+| **3F** | `HND-ADM-3F1` | Ananya Roy Chowdhury | `ananya.roy@test.co.in` | Plant 3 Associate Admin (Senior) |
+| **3F** | `HND-ADM-3F2` | Sanjay K. Rao | `sanjay.rao@test.co.in` | Plant 3 Associate Admin (Operations) |
+| **4F** | `HND-ADM-4F1` | Deepak Joshi | `deepak.joshi@test.co.in` | Plant 4 Sole Associate Admin |
 
 ### 👷 Sample Pre-Generated Employees (30 Total across all 5 locations)
 
